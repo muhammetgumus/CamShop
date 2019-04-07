@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_list);
-        initImageBitmaps();
+        openCamera();
+     //   initImageBitmaps();
 
 
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-/*
+
     public void openCamera(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,0);
@@ -69,16 +70,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-     //   Bitmap photo = (Bitmap) data.getExtras().get("data");
-     //   Intent intent= new Intent();
-     //   intent.putExtras("photo",photo);
-       // image.setImageBitmap(photo);
-     //  b= data.getExtras();
-      // Bitmap bm = (Bitmap) b.get("data");
-      // image.setImageBitmap(photo);
-    //   b.putParcelable("photo",photo);
+        Bitmap photo = (Bitmap) data.getExtras().get("data");
+        Intent intent= new Intent(this,MainActivity2.class);
+        intent.putExtra("photo",photo);
+        //image.setImageBitmap(photo);
+       //b= data.getExtras();
+       //Bitmap bm = (Bitmap) b.get("data");
+       //image.setImageBitmap(photo);
+       //b.putParcelable("photo",photo);
+        startActivity(intent);
 }
-*/
+
 
 private void initImageBitmaps(){
         mImageUrls.add("https://cdn.vatanbilgisayar.com/UPLOAD/PRODUCT/APPLE/thumb/v2-88233_medium.JPG");
