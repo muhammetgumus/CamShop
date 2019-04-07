@@ -90,12 +90,12 @@ public class MainActivity2 extends AppCompatActivity {
             } catch (Exception e) {
                 Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
             }
-                                                                                    //imageFile
+                                                                                    
         RequestBody requestFile = RequestBody.create(MediaType.parse("image/*") ,f);
 
 
         Retrofit retrofit = builder.build();
-                                                                                              //file.getName()
+                                                                                              
         MultipartBody.Part sendingFile= MultipartBody.Part.createFormData("file","imageToUpload",requestFile);
         GitHubClient client =retrofit.create(GitHubClient.class);
 
