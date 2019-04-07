@@ -53,13 +53,7 @@ public class MainActivity2 extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  Intent intent=new Intent(MainActivity2.this,Sample1Activity.class);
-              //  intent.putExtra("image",bmp);
-              //  startActivity(intent);
-
                 startProcess();
-
-
 
             }
         });
@@ -71,12 +65,9 @@ public class MainActivity2 extends AppCompatActivity {
 
             Retrofit.Builder builder = new Retrofit.Builder()
                    .baseUrl("http://35.198.131.192:8080")
-                   // .baseUrl("http://10.29.3.230:7777")
-                    .addConverterFactory(GsonConverterFactory.create(gson));
+                   .addConverterFactory(GsonConverterFactory.create(gson));
 
 
-           // File filesDir = getFilesDir();
-           // File imageFile = new File(filesDir, "imageAsd" + ".jpg");
             String fileName = new SimpleDateFormat("yyyyMMddHHmm'.jpeg'").format(new Date());
             File f = new File(getCacheDir(), fileName);
             try {
@@ -112,8 +103,6 @@ public class MainActivity2 extends AppCompatActivity {
         call.enqueue(new Callback<ImageResponse>() {
             @Override
             public void onResponse(Call<ImageResponse> call, Response<ImageResponse> response) {
-                //textView2.setText("ALLLL OF DONEEEEE : " + response.body().getStatus()
-                //        +" "+ " " );
                 ImageResponse imageResponse = response.body();
                 textView2.setText(imageResponse.getName()+" "+imageResponse.getStatus()+" "+imageResponse.getToken()+" "+imageResponse.getUrl());
 
