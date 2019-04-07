@@ -28,29 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_list);
         openCamera();
-     //   initImageBitmaps();
-
-
-
-        //   image = findViewById(R.id.imageView);
-
-
-
-            //b= savedInstanceState;
-    //    if(b.getParcelable("photo")==null) {
-       //     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-    //        startActivityForResult(intent, 0);
-      //  }
-
-
-
-      /*  if(b!=null){
-            image.setImageBitmap((Bitmap) b.getParcelable("photo"));
-        }//else {image = findViewById(R.id.imageView);}
-*/
-
-
+    
     }
 
 
@@ -73,16 +51,11 @@ public class MainActivity extends AppCompatActivity {
         Bitmap photo = (Bitmap) data.getExtras().get("data");
         Intent intent= new Intent(this,MainActivity2.class);
         intent.putExtra("photo",photo);
-        //image.setImageBitmap(photo);
-       //b= data.getExtras();
-       //Bitmap bm = (Bitmap) b.get("data");
-       //image.setImageBitmap(photo);
-       //b.putParcelable("photo",photo);
         startActivity(intent);
 }
 
 
-private void initImageBitmaps(){
+/*private void initImageBitmaps(){
         mImageUrls.add("https://cdn.vatanbilgisayar.com/UPLOAD/PRODUCT/APPLE/thumb/v2-88233_medium.JPG");
         mNames.add("IPhone 7");
         mPricess.add("3500");
@@ -111,7 +84,7 @@ private void initImageBitmaps(){
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
 }
-
+*/
 
 
 }
