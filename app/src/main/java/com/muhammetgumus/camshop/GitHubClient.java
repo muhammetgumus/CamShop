@@ -29,4 +29,8 @@ public interface GitHubClient {
     Call<ImageResponse> processImage(@Part MultipartBody.Part body);
 
 
+    @GET("/products/{title}")
+    Call<List<ProductResponse>> findProducts(@Path("title")String title);
+
+
 }

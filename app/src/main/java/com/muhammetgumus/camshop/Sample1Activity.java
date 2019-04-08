@@ -42,7 +42,7 @@ public class Sample1Activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_activity);
-       // text =(TextView)findViewById(R.id.textView);
+
        final Bitmap bmp= (Bitmap) getIntent().getParcelableExtra("image");
         img= (ImageView) findViewById(R.id.imageView3);
         img.setImageBitmap(bmp);
