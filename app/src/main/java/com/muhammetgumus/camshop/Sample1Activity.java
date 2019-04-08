@@ -41,85 +41,11 @@ public class Sample1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity2);
+        setContentView(R.layout.sample_activity);
        // text =(TextView)findViewById(R.id.textView);
        final Bitmap bmp= (Bitmap) getIntent().getParcelableExtra("image");
         img= (ImageView) findViewById(R.id.imageView3);
         img.setImageBitmap(bmp);
-
-        /*
-        Gson gson= new GsonBuilder().setLenient().create();
-
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://35.198.131.192:8080")
-                .addConverterFactory(GsonConverterFactory.create(gson));
-
-        Bitmap bitmap = (Bitmap)getIntent().getParcelableExtra("image");
-        File filesDir = getFilesDir();
-        File imageFile = new File(filesDir, "imageAsd" + ".jpg");
-
-        OutputStream os;
-        try {
-            os = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
-            os.flush();
-            os.close();
-        } catch (Exception e) {
-            Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
-        }
-
-*/
-
-
-        /* "//storage//DCIM//'Camera//20190405_123026.jpg";   */
-        String path= Environment.DIRECTORY_PICTURES+"//download.jpg";
-        Uri denemeUri= Uri.parse(path);
-
-        System.out.println(denemeUri);
-
-        File file = new File(path);
-        file.getAbsolutePath();
-
-       /* Uri uri;
-        uri=Uri.parse(file.getAbsolutePath());
-        int lengthString=uri.toString().length()+1;
-        String uriModified= uri.toString().substring(1,lengthString);
-        Uri uri2=Uri.parse(uriModified);
-        System.out.println(uri2);*/
-
-        //RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg") ,file);
- /*       RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg") ,imageFile);
-
-
-        Retrofit retrofit = builder.build();
-                                                                                              //file.getName()
-        MultipartBody.Part sendingFile= MultipartBody.Part.createFormData("photoToUpload","imageToUpload",requestFile);
-        GitHubClient client =retrofit.create(GitHubClient.class);
-
-        Call<ImageResponse> call = client.processImage(sendingFile);
-        call.enqueue(new Callback<ImageResponse>() {
-            @Override
-            public void onResponse(Call<ImageResponse> call, Response<ImageResponse> response) {
-                text.setText("ALLLL OF DONEEEEE : " + response.body().getName()
-                        +" "+ " " );
-
-
-            }
-
-            @Override
-            public void onFailure(Call<ImageResponse> call, Throwable t) {
-                text.setText("ERRORRRRRRR: "+ t.getMessage()+"!!!!!"+"\n"+t.getCause()  );
-            }
-        });
-
-
-*/
-
-
-
-
-
-
 
 
     }
