@@ -23,7 +23,7 @@ public interface GitHubClient {
     Call<String> createAccount(@Body User user);
 */
 
-    // @Part("locale") RequestBody requestBody
+    
     @Multipart
     @POST("image/text")
     Call<ImageResponse> processImage(@Part MultipartBody.Part body);
